@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-4.0.0.js"></script>
+</head>
+
+<body>
+    <div class="contenedor_formulario">
+
+        <h1>FORMULARIO - CONTACTANOS</h1>
+
+        <div class="formulario">
+            <form action="loquesea.html" method="get" id="formulario">
+                <div class="etiquetas">
+                    <label><span>*</span> Nombre:</label>
+                    <label>Email:</label>
+                    <label>Teléfono:</label>
+                    <label><span>*</span> Fecha:</label>
+                    <label><span>*</span> Comentarios:</label>
+                </div>
+
+                <div class="campos">
+                    <input id="nombre-validar" required type="text">
+                    <input type="email">
+                    <input type="tel" placeholder="Ejem:9991234567">
+                    <input id="fecha-validar" required type="date">
+                    <textarea id="comentario-validar" required></textarea>
+                    <button id="btn-validar" type="button">Enviar comentario</button>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
+    <script>
+        $('#btn-validar').click(function () {
+
+            if ($('#nombre-validar').val().trim() == '') {
+                alert("Escribe tu nombre wey");
+                $("#nombre-validar").focus();
+                return 0;
+            }
+
+            if ($('#fecha-validar').val().trim() == '') {
+                alert("Escoge una fecha");
+                $("#fecha-validar").focus();
+                return 0;
+            }
+
+            if ($('#comentario-validar').val().trim() == '') {
+                alert("Comentario obligatio");
+                $("#comentario-validar").focus();
+                return 0;
+            }
+
+            $("#formulario").submit();
+        })
+
+
+
+
+    </script>
+
+</body>
+
+</html>
